@@ -17,7 +17,5 @@ RUSTFLAGS='-C target-feature=+atomics,+bulk-memory,+mutable-globals' \
 
 # Note the usage of `--target no-modules` here which is required for passing
 # the memory import to each wasm module.
-cargo run -p wasm-bindgen-cli -- \
-  ../../target/wasm32-unknown-unknown/release/raytrace_parallel.wasm \
-  --out-dir . \
-  --target no-modules
+wasm-bindgen ./target/wasm32-unknown-unknown/release/raytrace_parallel.wasm --out-dir . --target no-modules
+
